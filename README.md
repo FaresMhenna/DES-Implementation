@@ -29,11 +29,12 @@ DES (Data Encryption Standard) is a symmetric-key algorithm used for the encrypt
 
 ## How to Run
 
-1. Clone this repository to your local machine.
-2. Install the required dependencies (if applicable).
-3. Run the `des_encryption.py` file to test encryption and decryption.
+A video demonstration of this project is available here: https://youtu.be/oocHLXvnjQo
 
-Example usage:
+Video Explanation:
 
-```bash
-python des_encryption.py
+In this video, I demonstrate the working of my DES encryption and decryption implementation in Python. Here's a step-by-step overview:
+
+Key Generation: I use the secret key "Test1245" (56 bits) for both encryption and decryption. This key is crucial for the entire encryption and decryption process.
+Encryption: I encrypt the word "Encrypti" using the DES algorithm with the secret key. The encrypted output is shown in the video.
+Decryption: I then take the encrypted message and use the same secret key to decrypt it. The decrypted message matches the original word "Encrypti", confirming that both encryption and decryption processes work correctly.
