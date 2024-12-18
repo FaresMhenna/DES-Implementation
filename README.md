@@ -1,43 +1,39 @@
-Cryptographic Algorithm Implementation: DES (Data Encryption Standard)
+# DES Implementation in Python
 
-Overview
+This repository contains a Python implementation of the DES (Data Encryption Standard) cryptographic algorithm. It includes functions for:
 
-This project implements the DES (Data Encryption Standard) block cipher in Python. DES is a symmetric-key algorithm used for data encryption. It operates on 64-bit blocks of data and uses a 56-bit key for encryption and decryption. The project includes both encryption and decryption processes, demonstrating how DES works under the hood.
+- Encrypting messages using the DES algorithm.
+- Decrypting messages using the DES algorithm.
+- A demo of usage with example outputs.
 
-This implementation has been simplified for educational purposes while still demonstrating the core concepts of the DES algorithm, including permutation, expansion, substitution, and XOR operations.
+## Overview
 
-Features
+DES (Data Encryption Standard) is a symmetric-key algorithm used for the encryption of data. Although it is now considered insecure for many applications, DES was widely used for secure data transmission in the past. The implementation in this repository follows the basic principles of DES encryption, including:
 
-DES Block Cipher: Implementation of both encryption and decryption processes.
-Key Scheduling: Generates 16 sub-keys from the main key using PC1, PC2, and circular left shifts.
-Permutation and Expansion: Uses Initial and Final Permutation tables, along with an expansion of the right half during the rounds.
-Interactive Mode: A simple interactive user interface where you can encrypt and decrypt text of your choice.
-Prerequisites
+- **Encryption**: Encrypts data using a secret key.
+- **Decryption**: Decrypts encrypted data using the same secret key.
 
-Python 3.x
-Basic understanding of cryptography and block ciphers.
-How to Run
+## Features
 
-Clone the repository:
-git clone https://github.com/yourusername/des-cryptography.git
-Navigate to the project directory:
-cd des-cryptography
-Run the des.py file to start the interactive mode:
-python des.py
-The program will prompt you to choose whether you want to encrypt or decrypt a message. Enter your desired text (8 characters) and key (8 characters) when prompted.
-Code Explanation
+- **Encryption**: The message is encrypted by dividing it into 64-bit blocks, performing multiple rounds of substitution and permutation using a 56-bit key.
+- **Decryption**: The encrypted message is decrypted using the same key by reversing the encryption steps.
+  
+### Key Generation
 
-Key Steps
-Permutation: The input text and keys go through several permutations (Initial and Final Permutation), which shuffle bits according to predefined tables.
-Key Generation: The original key goes through the PC1 and PC2 steps to generate 16 subkeys used in the 16 rounds of the DES algorithm.
-Rounds: In each round, the right half of the text is expanded and XORed with the subkey. The result is passed through a substitution box (S-box) and combined with the left half to form the new text.
-XOR Operations: At the heart of the DES algorithm, XOR is used for combining the input with the subkeys.
-Functions Implemented
-permute: Applies a permutation to a block of data using a given permutation table.
-text_to_bin: Converts a string into its binary representation.
-bin_to_text: Converts a binary string back to text.
-split_block: Splits a block of data into two halves.
-circular_left_shift: Performs a left shift operation on the bits.
-generate_subkeys: Generates 16 subkeys used in the DES encryption process.
-des_encrypt: Performs the DES encryption algorithm on a given block using the subkeys.
-des_decrypt: Performs the DES decryption algorithm, reversing the encryption process.
+- DES uses a 56-bit key for encryption, which is expanded into 16 subkeys for each round of the algorithm.
+
+### Encryption and Decryption
+
+- **Encryption**: The message is divided into 64-bit blocks and encrypted using the DES algorithm with the public key.
+- **Decryption**: The encrypted message is decrypted using the same key in reverse order.
+
+## How to Run
+
+1. Clone this repository to your local machine.
+2. Install the required dependencies (if applicable).
+3. Run the `des_encryption.py` file to test encryption and decryption.
+
+Example usage:
+
+```bash
+python des_encryption.py
